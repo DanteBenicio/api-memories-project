@@ -4,7 +4,7 @@ export async function connectToMongoDB(uri: string) {
   try {
     const response = await mongoose.connect(uri)
     
-    return response
+    if (response) return 200
   } catch (error) {
     return error
   }
